@@ -26,5 +26,6 @@ public class CubeEditor : MonoBehaviour
         transform.position = new Vector3(snapPos.x, 0f, snapPos.z);
 
         gridText.text = transform.position.x / gridSize + "," + transform.position.z / gridSize;
+        gameObject.name = gridText.text;
     }
 }

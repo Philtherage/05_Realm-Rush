@@ -4,20 +4,32 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] List<Block> enemyPath;
+    [SerializeField] List<Waypoint> enemyPath;
+    [SerializeField] float timeBetweenGrids = 1f;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(MoveOnPath());
     }
 
     // Update is called once per frame
     void Update()
     {
-        foreach(Block block in enemyPath)
-        {
-            Debug.Log(block.transform.position.x + "," + block.transform.position.z);
-        }
+
     }
+
+    IEnumerator MoveOnPath()
+    {
+        print("Starting Patrol...");
+        foreach (Waypoint waypoint in enemyPath)
+        {            
+            print("Visiting block: " + waypoint.name);
+            transform.position = waypoint.transform.position;
+            yield return new WaitForSeconds(timeBetweenGrids);
+        }
+        print("Ending Patrol");
+    }
+
+
 }

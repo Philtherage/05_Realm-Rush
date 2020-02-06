@@ -11,4 +11,6 @@
 * Section 5: 129. Instance Variables And Constants.
 
 * Section 5: 130. The Dictionary Data Structure.
+
+* Section 5: 131. Finding Game Objects By Name.
  

@@ -328,7 +328,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 079c0cf651f1eef4bab5fd26c7e39408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSize: 10
 --- !u!114 &1603102045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,7 +353,7 @@ GameObject:
   - component: {fileID: 314838495966649319}
   - component: {fileID: 314838495966649316}
   m_Layer: 0
-  m_Name: Quad (2)
+  m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

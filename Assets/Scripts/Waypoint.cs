@@ -22,9 +22,9 @@ public class Waypoint : MonoBehaviour
         
     }
 
-    public Vector2 GetGridPosition()
+    public Vector2Int GetGridPosition()
     {
-        return new Vector2(
+        return new Vector2Int(
         Mathf.RoundToInt(transform.position.x / gridSize) * gridSize,
         Mathf.RoundToInt(transform.position.z / gridSize) * gridSize);
     }

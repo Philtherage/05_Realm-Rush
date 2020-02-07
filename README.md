@@ -18,5 +18,7 @@
 
 * Section 5: 134. Introducing C# Queues.
 
-* Section 5: 135: Running Manual Tests.
+* Section 5: 135. Running Manual Tests.
+
+* Section 5: 136. A Breadcrumb Trail.
  

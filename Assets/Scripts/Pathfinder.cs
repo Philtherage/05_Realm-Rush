@@ -8,6 +8,9 @@ public class Pathfinder : MonoBehaviour
     [SerializeField] Waypoint start, end;
 
     Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
+    Queue<Waypoint> queue = new Queue<Waypoint>();
+    bool isRunning = true;
+
     Vector2Int[] directions =
     {
         Vector2Int.down,
@@ -22,7 +25,28 @@ public class Pathfinder : MonoBehaviour
     {
         LoadBlocks();
         StartAndEndColor();
+        Pathfind();
         ExploreNeighbours();
+    }
+
+    private void Pathfind()
+    {
+        queue.Enqueue(start);
+        while(queue.Count > 0)
+        {
+            var searchCenter = queue.Dequeue();
+            print(searchCenter);
+            HaltIfEndFound(searchCenter);
+        }
+    }
+
+    private void HaltIfEndFound(Waypoint searchCenter)
+    {
+        if (searchCenter == end)
+        {
+            print("terminating action ");
+            isRunning = false;
+        }
     }
 
     // Update is called once per frame

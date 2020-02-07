@@ -11,6 +11,7 @@ public class Pathfinder : MonoBehaviour
     Queue<Waypoint> queue = new Queue<Waypoint>();
     bool isRunning = true;
     Waypoint searchCenter;
+    List<Waypoint> path = new List<Waypoint>();
 
     Vector2Int[] directions =
     {
@@ -20,16 +21,44 @@ public class Pathfinder : MonoBehaviour
         Vector2Int.left
     };
 
-
     // Start is called before the first frame update
     void Start()
     {
-        LoadBlocks();
-        StartAndEndColor();
-        Pathfind();
+
     }
 
-    private void Pathfind()
+    public List<Waypoint> GetPath()
+    {
+        LoadBlocks();
+        StartAndEndColor();
+        BreadthFirstSearch();
+        CreatePath();
+        return path;
+    }
+
+    private void CreatePath()
+    {
+        path.Add(end);
+
+        Waypoint previous = end.exploredFrom;
+        while(previous != start)
+        {
+            // add intermediate waypoints
+            path.Add(previous);
+            // gets previous location and stores it threw to start then end of loop
+            previous = previous.exploredFrom;
+            
+        }
+
+        // add start to list
+        path.Add(start);
+        // reverse of list
+        path.Reverse();
+
+        
+    }
+
+    private void BreadthFirstSearch()
     {
         queue.Enqueue(start);
         while(queue.Count > 0 && isRunning)
@@ -56,13 +85,9 @@ public class Pathfinder : MonoBehaviour
         foreach (Vector2Int direction in directions)
         {
             var explorationCorods = searchCenter.GetGridPosition() + direction;
-            try
+            if(grid.ContainsKey(explorationCorods))
             {
                 QueueNewNeighbours(explorationCorods);
-            }
-            catch
-            {
-               
             }
         }
     }
@@ -75,7 +100,6 @@ public class Pathfinder : MonoBehaviour
         queue.Enqueue(neighbour);
         neighbour.exploredFrom = searchCenter;
         neighbour.isExplored = true;
-        print("neibours " + neighbour);
     }
 
     private void LoadBlocks()

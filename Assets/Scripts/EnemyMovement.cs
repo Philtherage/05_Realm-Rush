@@ -4,31 +4,25 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] List<Waypoint> enemyPath;
     [SerializeField] float timeBetweenGrids = 1f;
-    
+
+    List<Waypoint> path;
     // Start is called before the first frame update
     void Start()
     {
+        path = FindObjectOfType<Pathfinder>().GetPath();
         StartCoroutine(MoveOnPath());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     IEnumerator MoveOnPath()
     {
-        foreach (Waypoint waypoint in enemyPath)
-        {            
-            print("Visiting block: " + waypoint.name);
+        foreach (Waypoint waypoint in path)
+        {
+            print(waypoint.gameObject.name);
             transform.position = waypoint.transform.position;
             yield return new WaitForSeconds(timeBetweenGrids);
         }
         
     }
-
 
 }

@@ -13,4 +13,6 @@
 * Section 5: 130. The Dictionary Data Structure.
 
 * Section 5: 131. Finding Game Objects By Name.
+
+* Section 5: 132. Explore Thy Neighbour.
  

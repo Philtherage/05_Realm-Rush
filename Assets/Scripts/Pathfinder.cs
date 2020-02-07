@@ -1,26 +1,50 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Pathfinder : MonoBehaviour
 {
+    [SerializeField] Waypoint start, end;
 
     Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
+    Vector2Int[] directions =
+    {
+        Vector2Int.down,
+        Vector2Int.up,
+        Vector2Int.right,
+        Vector2Int.left
+    };
 
-    [SerializeField] Waypoint start;
-    [SerializeField] Waypoint end;
 
     // Start is called before the first frame update
     void Start()
     {
         LoadBlocks();
         StartAndEndColor();
+        ExploreNeighbours();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void ExploreNeighbours()
+    {
+        foreach (Vector2Int direction in directions)
+        {
+            var explorationCorods = start.GetGridPosition() + direction;
+            try
+            {
+                grid[explorationCorods].SetTopColor(Color.green);
+            }
+            catch
+            {
+               
+            }
+        }
     }
 
     private void LoadBlocks()
@@ -37,9 +61,7 @@ public class Pathfinder : MonoBehaviour
             {
                 grid.Add(waypoint.GetGridPosition(), waypoint);                
             }
-        }
-        
-        print("Loaded " + grid.Count + " Blocks");        
+        }       
     }
 
     private void StartAndEndColor()

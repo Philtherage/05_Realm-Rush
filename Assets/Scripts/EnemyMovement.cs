@@ -21,14 +21,13 @@ public class EnemyMovement : MonoBehaviour
 
     IEnumerator MoveOnPath()
     {
-        print("Starting Patrol...");
         foreach (Waypoint waypoint in enemyPath)
         {            
             print("Visiting block: " + waypoint.name);
             transform.position = waypoint.transform.position;
             yield return new WaitForSeconds(timeBetweenGrids);
         }
-        print("Ending Patrol");
+        
     }
 
 

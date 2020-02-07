@@ -17,4 +17,6 @@
 * Section 5: 132. Explore Thy Neighbour.
 
 * Section 5: 134. Introducing C# Queues.
+
+* Section 5: 135: Running Manual Tests.
  

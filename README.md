@@ -25,4 +25,6 @@
 * Section 5: 137. Reversing A List.
 
 * Section 5: 138. Adding Production Assets.
+
+* Section 5: 139. Tower LookAt Enemy.
  

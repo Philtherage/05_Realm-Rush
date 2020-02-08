@@ -21,12 +21,6 @@ public class Pathfinder : MonoBehaviour
         Vector2Int.left
     };
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     public List<Waypoint> GetPath()
     {
         LoadBlocks();
@@ -74,7 +68,6 @@ public class Pathfinder : MonoBehaviour
     {
         if (searchCenter == end)
         {
-            print("Found the end, Stopping search");
             isRunning = false;
         }
     }
@@ -110,7 +103,7 @@ public class Pathfinder : MonoBehaviour
             bool isOverlapping = grid.ContainsKey(waypoint.GetGridPosition());
             if (isOverlapping)
             {
-                Debug.Log("Skipping overlapping block " + waypoint);                
+                // do nothing
             }
             else
             {

@@ -12,13 +12,13 @@ public class EnemyMovement : MonoBehaviour
     {
         path = FindObjectOfType<Pathfinder>().GetPath();
         StartCoroutine(MoveOnPath());
+        
     }
 
     IEnumerator MoveOnPath()
     {
         foreach (Waypoint waypoint in path)
         {
-            print(waypoint.gameObject.name);
             transform.position = new Vector3(waypoint.transform.position.x, 
                                              transform.position.y, waypoint.transform.position.z);
             yield return new WaitForSeconds(timeBetweenGrids);

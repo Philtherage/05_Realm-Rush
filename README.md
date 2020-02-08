@@ -27,4 +27,6 @@
 * Section 5: 138. Adding Production Assets.
 
 * Section 5: 139. Tower LookAt Enemy.
+
+* Section 5: 141. Another Solo Challenge.
  

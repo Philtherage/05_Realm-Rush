@@ -12,6 +12,7 @@ public class Pathfinder : MonoBehaviour
     bool isRunning = true;
     Waypoint searchCenter;
     List<Waypoint> path = new List<Waypoint>();
+    bool calledOnce = false;
 
     Vector2Int[] directions =
     {
@@ -23,10 +24,12 @@ public class Pathfinder : MonoBehaviour
 
     public List<Waypoint> GetPath()
     {
+        if (calledOnce) { return path; }
         LoadBlocks();
         StartAndEndColor();
         BreadthFirstSearch();
         CreatePath();
+        calledOnce = true;
         return path;
     }
 

@@ -44,6 +44,7 @@ public class Tower : MonoBehaviour
 
     private void IsEnemyInRange(List<float> distances)
     {
+        
         foreach (float distance in distances)
         {
             if (distance <= turretRange)
@@ -53,9 +54,15 @@ public class Tower : MonoBehaviour
             }
             else
             {
-                var emissionModule = turret.emission;
-                emissionModule.enabled = false;
+                var emissionModules = turret.emission;
+                emissionModules.enabled = false;
             }
         }
+        if(targetEnemy == null)
+        {
+            var emissionModule = turret.emission;
+            emissionModule.enabled = false;
+        }
+       
     }
 }

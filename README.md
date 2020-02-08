@@ -29,4 +29,10 @@
 * Section 5: 139. Tower LookAt Enemy.
 
 * Section 5: 141. Another Solo Challenge.
+
+* Section 5: 147. Target Closest Enemy.
+
+* Section 5: 148. Detecting Mouse in 3D.
+
+* Section 5: 149. Conditional Instantiation.
  

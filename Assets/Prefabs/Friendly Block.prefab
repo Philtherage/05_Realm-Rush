@@ -78,7 +78,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1315648639}
-  m_Text: 0,0
+  m_Text: 0,-3
   m_OffsetZ: 0
   m_CharacterSize: 0.14
   m_LineSpacing: 1
@@ -103,8 +103,9 @@ GameObject:
   - component: {fileID: 314838495833736719}
   - component: {fileID: 3678541843624521561}
   - component: {fileID: 1603102045}
+  - component: {fileID: 8797341858794813857}
   m_Layer: 0
-  m_Name: Quad Cube
+  m_Name: Friendly Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,6 +154,19 @@ MonoBehaviour:
   exploredColor: {r: 0.06791806, g: 1, b: 0, a: 1}
   isExplored: 0
   exploredFrom: {fileID: 0}
+--- !u!65 &8797341858794813857
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314838495833736716}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.406323, y: 10.232029, z: 9.549732}
+  m_Center: {x: -0.018236637, y: 5.0209303, z: 0.00614357}
 --- !u!1 &314838495966649314
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +194,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314838495966649314}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 10, z: -0}
+  m_LocalPosition: {x: 0, y: 9.88, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1315648640}

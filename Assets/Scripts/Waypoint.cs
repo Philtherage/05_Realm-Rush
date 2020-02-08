@@ -9,6 +9,8 @@ public class Waypoint : MonoBehaviour
 
 
     public bool isExplored = false;
+    public bool isPlaceable = true;
+
     public Waypoint exploredFrom;
 
     const int gridSize = 10;
@@ -18,10 +20,6 @@ public class Waypoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isExplored)
-        {
-            SetTopColor(exploredColor);
-        }
     }
 
     public Vector2Int GetGridPosition()
@@ -36,9 +34,21 @@ public class Waypoint : MonoBehaviour
         return gridSize;
     }
 
-    public void SetTopColor(Color color)
+    private void OnMouseOver()
     {
-        MeshRenderer topMeshRenderer = transform.Find("Top").GetComponent<MeshRenderer>();
-        topMeshRenderer.material.color = color; 
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (isPlaceable)
+            {
+                print("Placing Tower");
+            }
+            else
+            {
+                print("Cant Place At This Location");
+            }
+
+        }
+        
     }
+    
 }

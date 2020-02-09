@@ -48,7 +48,6 @@ MonoBehaviour:
   objectToPan: {fileID: 6057428215006741558}
   turret: {fileID: 7110896550279573752}
   turretRange: 60
-  targetEnemy: {fileID: 0}
 --- !u!1001 &6061524725147037790
 PrefabInstance:
   m_ObjectHideFlags: 0

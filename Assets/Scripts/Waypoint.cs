@@ -4,23 +4,13 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
-
-    [SerializeField] Color exploredColor;
-
-
     public bool isExplored = false;
     public bool isPlaceable = true;
-
     public Waypoint exploredFrom;
 
+    [SerializeField] Tower towerPrefab;
+
     const int gridSize = 10;
-
-    Vector2Int gridPos;
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
 
     public Vector2Int GetGridPosition()
     {
@@ -40,15 +30,13 @@ public class Waypoint : MonoBehaviour
         {
             if (isPlaceable)
             {
-                print("Placing Tower");
+                Instantiate(towerPrefab, transform.position, Quaternion.identity);
+                isPlaceable = false;
             }
             else
             {
                 print("Cant Place At This Location");
             }
-
-        }
-        
+        }        
     }
-    
 }

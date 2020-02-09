@@ -5,26 +5,31 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] ParticleSystem deathVFX;
+    [SerializeField] ParticleSystem damageTakenVFX;
 
+    Health health;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        health = GetComponent<Health>();
     }
 
     private void OnParticleCollision(GameObject other)
     {
+        TakeDamage(other);
+        Die();
+    }
+
+    private void TakeDamage(GameObject other)
+    {
         int damage = other.GetComponent<DamageDealer>().GetDamage();
-        Health health = GetComponent<Health>();
         health.TakeDamage(damage);
-        if(health.GetHealth() == 0)
+        damageTakenVFX.Play();
+    }
+
+    private void Die()
+    {
+        if (health.GetHealth() == 0)
         {
             Destroy(gameObject);
             ParticleSystem expolsion = Instantiate(deathVFX, transform.position, Quaternion.identity) as ParticleSystem;

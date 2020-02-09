@@ -35,4 +35,6 @@
 * Section 5: 148. Detecting Mouse in 3D.
 
 * Section 5: 149. Conditional Instantiation.
+
+* Section 5: 151. Particles & Algorithm Improvements.
  

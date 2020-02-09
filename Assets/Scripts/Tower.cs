@@ -12,7 +12,7 @@ public class Tower : MonoBehaviour
     [SerializeField] float turretRange = 40f;
     
     // State of each Tower
-    [SerializeField] Transform targetEnemy;
+    Transform targetEnemy;
 
     // Start is called before the first frame update
     void Start()

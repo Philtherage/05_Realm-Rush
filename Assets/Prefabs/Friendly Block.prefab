@@ -78,7 +78,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1315648639}
-  m_Text: 0,-3
+  m_Text: -1,0
   m_OffsetZ: 0
   m_CharacterSize: 0.14
   m_LineSpacing: 1
@@ -151,8 +151,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a02aa33ef131c2748a6c7ba12e05fd6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exploredColor: {r: 0.06791806, g: 1, b: 0, a: 1}
+  towerPrefab: {fileID: 274737402396122167, guid: c2b0e21aff16e81498bf119989157fda,
+    type: 3}
   isExplored: 0
+  isPlaceable: 1
   exploredFrom: {fileID: 0}
 --- !u!65 &8797341858794813857
 BoxCollider:

@@ -39,4 +39,6 @@
 * Section 5: 151. Particles & Algorithm Improvements.
 
 * Section 5: 154. Revising C# Queues.
+
+* Section 5: 155. How To Destroy Particles.
  

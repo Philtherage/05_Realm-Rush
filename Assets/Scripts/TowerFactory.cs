@@ -10,8 +10,13 @@ public class TowerFactory : MonoBehaviour
     [SerializeField] int numberOfActiveAllowed = 3;
 
 
+    GameObject Towers;
     Queue<Tower> towers = new Queue<Tower>();
-    Queue<Waypoint> waypoints = new Queue<Waypoint>();
+
+    private void Start()
+    {
+        Towers = new GameObject("Towers");
+    }
 
     public void AddTowerToBuffer(Waypoint baseWaypoint)
     {
@@ -28,23 +33,23 @@ public class TowerFactory : MonoBehaviour
 
     private void InstantiateNewTower(Waypoint baseWaypoint)
     {
-        Tower newTower = Instantiate(towerPrefab, baseWaypoint.transform.position, Quaternion.identity);
-        var waypointPlacable = baseWaypoint;
-        waypointPlacable.isPlaceable = false;
-        waypoints.Enqueue(waypointPlacable);
+        Tower newTower = Instantiate(towerPrefab, baseWaypoint.transform.position, Quaternion.identity) as Tower;
+        newTower.transform.parent = Towers.transform;
+        newTower.baseWaypoint = baseWaypoint;
+        newTower.baseWaypoint.isPlaceable = false;
+        
         towers.Enqueue(newTower);
     }
 
-    private void MoveTower(Waypoint location)
+    private void MoveTower(Waypoint newBaseWaypoint)
     {
-        waypoints.Dequeue().isPlaceable = true;
-
         Tower oldTower = towers.Dequeue();
-        oldTower.transform.position = location.transform.position;
 
-        location.isPlaceable = false;
-        waypoints.Enqueue(location);
+        oldTower.baseWaypoint.isPlaceable = true;
+        newBaseWaypoint.isPlaceable = false;
+        oldTower.baseWaypoint = newBaseWaypoint;
 
+        oldTower.transform.position = newBaseWaypoint.transform.position;
         towers.Enqueue(oldTower);
         
     }

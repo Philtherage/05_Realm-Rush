@@ -81,6 +81,8 @@ MonoBehaviour:
   deathVFX: {fileID: 7928233541310356370, guid: 47573f98c45a11b4aaf7dd59f663d439,
     type: 3}
   damageTakenVFX: {fileID: 8403207955579682918}
+  deathParticles: {fileID: 5005932569075994900, guid: e443d894a01be59448d25f06ae78527e,
+    type: 3}
 --- !u!114 &7177229905321316550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19213,6 +19215,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Damage Taken Particle
       objectReference: {fileID: 0}
+    - target: {fileID: 4986325796812862943, guid: a39397d9a95fd104d97a25a511552b25,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4986325796812862943, guid: a39397d9a95fd104d97a25a511552b25,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4986325796812862943, guid: a39397d9a95fd104d97a25a511552b25,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4986325796812862943, guid: a39397d9a95fd104d97a25a511552b25,
+        type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4653994221472667213, guid: a39397d9a95fd104d97a25a511552b25,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19267,26 +19289,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4986325796812862943, guid: a39397d9a95fd104d97a25a511552b25,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4986325796812862943, guid: a39397d9a95fd104d97a25a511552b25,
-        type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4986325796812862943, guid: a39397d9a95fd104d97a25a511552b25,
-        type: 3}
-      propertyPath: moveWithTransform
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4986325796812862943, guid: a39397d9a95fd104d97a25a511552b25,
-        type: 3}
-      propertyPath: EmissionModule.enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a39397d9a95fd104d97a25a511552b25, type: 3}

@@ -11,7 +11,9 @@ public class Tower : MonoBehaviour
     [Tooltip("Shooting distance from enemy")] 
     [SerializeField] float turretRange = 40f;
 
-    
+
+    public Waypoint baseWaypoint;
+
     // State of each Tower
     Transform targetEnemy;
 

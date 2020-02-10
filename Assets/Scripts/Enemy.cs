@@ -7,10 +7,16 @@ public class Enemy : MonoBehaviour
     [SerializeField] ParticleSystem deathVFX;
     [SerializeField] ParticleSystem damageTakenVFX;
 
+
+
+    GameObject deathParticles;
+
     Health health;
+    
 
     private void Start()
     {
+        deathParticles = GameObject.Find("Death Particles");
         health = GetComponent<Health>();
     }
 
@@ -33,7 +39,8 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
             ParticleSystem expolsion = Instantiate(deathVFX, transform.position, Quaternion.identity) as ParticleSystem;
-            Destroy(expolsion, 1f);
+            expolsion.gameObject.transform.parent = deathParticles.transform;
+            Destroy(expolsion.gameObject, expolsion.main.duration);
         }
     }
 }

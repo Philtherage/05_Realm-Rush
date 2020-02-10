@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6061524725191319727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 70, y: 0, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6056850987507217761}
@@ -210,6 +210,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret Fire
       objectReference: {fileID: 0}
+    - target: {fileID: 4000734591742095736, guid: 7a731e3e3c5deef4794c4b72651ca042,
+        type: 3}
+      propertyPath: TrailModule.lifetime.scalar
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000734591742095736, guid: 7a731e3e3c5deef4794c4b72651ca042,
+        type: 3}
+      propertyPath: TrailModule.widthOverTrail.scalar
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 3665637447601046352, guid: 7a731e3e3c5deef4794c4b72651ca042,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -279,16 +289,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000734591742095736, guid: 7a731e3e3c5deef4794c4b72651ca042,
-        type: 3}
-      propertyPath: TrailModule.lifetime.scalar
-      value: 0.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000734591742095736, guid: 7a731e3e3c5deef4794c4b72651ca042,
-        type: 3}
-      propertyPath: TrailModule.widthOverTrail.scalar
-      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 2963647603403310516, guid: 7a731e3e3c5deef4794c4b72651ca042,
         type: 3}

@@ -37,4 +37,6 @@
 * Section 5: 149. Conditional Instantiation.
 
 * Section 5: 151. Particles & Algorithm Improvements.
+
+* Section 5: 154. Revising C# Queues.
  

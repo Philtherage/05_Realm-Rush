@@ -10,15 +10,11 @@ public class Tower : MonoBehaviour
     [SerializeField] ParticleSystem turret;
     [Tooltip("Shooting distance from enemy")] 
     [SerializeField] float turretRange = 40f;
+
     
     // State of each Tower
     Transform targetEnemy;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -78,4 +74,6 @@ public class Tower : MonoBehaviour
         if (distance2 < distance1) { return enemy; }
         return closestEnemy;
     }
+
+
 }

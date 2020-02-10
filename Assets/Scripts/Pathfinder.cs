@@ -22,6 +22,11 @@ public class Pathfinder : MonoBehaviour
         Vector2Int.left
     };
 
+    private void Start()
+    {
+        SetUpEndWaypoint();
+    }
+
     public List<Waypoint> GetPath()
     {
         if (calledOnce) { return path; }
@@ -112,6 +117,15 @@ public class Pathfinder : MonoBehaviour
                 grid.Add(waypoint.GetGridPosition(), waypoint);                
             }
         }       
+    }
+
+    private void SetUpEndWaypoint()
+    {
+        BoxCollider damageCollider = end.gameObject.AddComponent<BoxCollider>();
+        damageCollider.size = new Vector3(10f, 30f, 10f);
+        damageCollider.center = new Vector3(0f, 15f, 0f);
+        damageCollider.isTrigger = true;
+
     }
 
 }

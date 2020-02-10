@@ -41,4 +41,6 @@
 * Section 5: 154. Revising C# Queues.
 
 * Section 5: 155. How To Destroy Particles.
+
+* Section 5: 156. Complete Game Loo. (hooked up sfx, base health, and score ). 
  

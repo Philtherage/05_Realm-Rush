@@ -11,12 +11,17 @@ public class Tower : MonoBehaviour
     [Tooltip("Shooting distance from enemy")] 
     [SerializeField] float turretRange = 40f;
 
+    AudioSource pew;
 
     public Waypoint baseWaypoint;
 
     // State of each Tower
     Transform targetEnemy;
 
+    private void Start()
+    {
+        pew = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -38,7 +43,7 @@ public class Tower : MonoBehaviour
        float distance = Vector3.Distance(targetEnemy.transform.position, gameObject.transform.position);
        if (distance <= turretRange)
         {
-            Shoot(true);
+            Shoot(true);        
         }
         else
         {
@@ -51,6 +56,15 @@ public class Tower : MonoBehaviour
         var emissionModule = turret.emission;  
         emissionModule.enabled = inRange;
         objectToPan.LookAt(targetEnemy);
+        if (inRange)
+        { 
+            if (pew.isPlaying) { return; }        
+            pew.Play();
+        }
+        else
+        {
+            pew.Stop();
+        }
     }
 
     private void SetTargetEnemy()

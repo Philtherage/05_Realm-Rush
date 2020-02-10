@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 114078703179129330}
   - component: {fileID: 7177229905321316550}
   - component: {fileID: 1323464863235064425}
+  - component: {fileID: 727814238945585801}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -78,11 +79,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e92b59e42c95174c89185ab118c54eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScorePoints: 10
   deathVFX: {fileID: 7928233541310356370, guid: 47573f98c45a11b4aaf7dd59f663d439,
     type: 3}
   damageTakenVFX: {fileID: 8403207955579682918}
-  deathParticles: {fileID: 5005932569075994900, guid: e443d894a01be59448d25f06ae78527e,
-    type: 3}
+  deathSFX: {fileID: 8300000, guid: f85b610d78d5eec4dbd53fa8f79c5aab, type: 3}
 --- !u!114 &7177229905321316550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +110,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.7851043, y: 7.704114, z: 6.9119554}
   m_Center: {x: 0.03511262, y: 3.3449893, z: -0.085813284}
+--- !u!114 &727814238945585801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289942997295908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b9e5abe6528224a9ab748b92f9fe41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1 &1646541640735296
 GameObject:
   m_ObjectHideFlags: 0
